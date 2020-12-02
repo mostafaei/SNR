@@ -8,24 +8,24 @@ Average degree:   3.5000
 **** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
  
 The Required Subset of Nodes: 1
-Selected Starting Node is:  7
-list of Selected Subset of Nodes:  ['7', '12']
+Selected Starting Node is:  10
+list of Selected Subset of Nodes:  ['10', '0']
  
-List of Delays [4.1]
-The min latency value in selected subset: 4.1
-The max latency value in selected subset: 4.1
-The avg latency value in selected subset: 4.1
+List of Delays [15.86]
+The min latency value in selected subset: 15.86
+The max latency value in selected subset: 15.86
+The avg latency value in selected subset: 15.86
  
-List of BW [8.6]
-The min bw value in selected subset: 8.6
-The max bw value in selected subset: 8.6
-The avg bw value in selected subset: 8.6
+List of BW [11.3]
+The min bw value in selected subset: 11.3
+The max bw value in selected subset: 11.3
+The avg bw value in selected subset: 11.3
  
-List of Cost [0.04]
-The min cost value in selected subset: 0.04
-The max cost value in selected subset: 0.04
-The avg cost value in selected subset: 0.04
-sum of the cost in selected subset: 0.04
+List of Cost [0.23]
+The min cost value in selected subset: 0.23
+The max cost value in selected subset: 0.23
+The avg cost value in selected subset: 0.23
+sum of the cost in selected subset: 0.23
  
 List of hops [1]
 The min no. of hops traversed in selected subset: 1

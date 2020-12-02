@@ -8,27 +8,27 @@ Average degree:   3.5000
 **** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
  
 The Required Subset of Nodes: 4
-Selected Starting Node is:  7
-list of Selected Subset of Nodes:  ['7', '12', '8', '1', '4']
+Selected Starting Node is:  10
+list of Selected Subset of Nodes:  ['10', '0', '19', '6', '16']
  
-List of Delays [4.1, 7.29, 14.1, 26.67, 3.19, 18.2, 30.77, 21.39, 33.96, 12.57]
-The min latency value in selected subset: 3.19
-The max latency value in selected subset: 33.96
-The avg latency value in selected subset: 17.22
+List of Delays [15.86, 20.49, 29.06, 27.77, 27.12, 13.2, 11.91, 13.92, 12.3, 25.11]
+The min latency value in selected subset: 11.91
+The max latency value in selected subset: 29.06
+The avg latency value in selected subset: 19.67
  
-List of BW [8.6, 8.6, 9.5, 9.5, 11.0, 8.6, 8.6, 8.6, 8.6, 11.2]
-The min bw value in selected subset: 8.6
-The max bw value in selected subset: 11.2
-The avg bw value in selected subset: 9.28
+List of BW [11.3, 10.2, 11.3, 11.3, 8.5, 11.5, 12.9, 8.5, 8.9, 11.5]
+The min bw value in selected subset: 8.5
+The max bw value in selected subset: 12.9
+The avg bw value in selected subset: 10.59
  
-List of Cost [0.04, 0.25, 0.04, 0.25, 0.2, 0.08, 0.3, 0.29, 0.5, 0.21]
-The min cost value in selected subset: 0.04
-The max cost value in selected subset: 0.5
-The avg cost value in selected subset: 0.22
-sum of the cost in selected subset: 2.16
+List of Cost [0.23, 0.13, 0.32, 0.44, 0.24, 0.1, 0.21, 0.15, 0.2, 0.31]
+The min cost value in selected subset: 0.1
+The max cost value in selected subset: 0.44
+The avg cost value in selected subset: 0.23
+sum of the cost in selected subset: 2.33
  
-List of hops [1, 2, 1, 2, 1, 2, 3, 3, 4, 1]
+List of hops [1, 1, 2, 2, 2, 1, 1, 1, 1, 2]
 The min no. of hops traversed in selected subset: 1
-The max no. of hops traversed in selected subset: 4
-The avg no. of hops traversed in selected subset: 2.0
+The max no. of hops traversed in selected subset: 2
+The avg no. of hops traversed in selected subset: 1.4
  
