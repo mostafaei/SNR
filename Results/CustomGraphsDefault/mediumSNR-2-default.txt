@@ -1,0 +1,26 @@
+Name: 
+Type: Graph
+Number of nodes: 30
+Number of edges: 64
+Average degree:   4.2667
+selected subset of nodes:  ['0', '1']
+Selected Starting Node is:  0
+The Required Subset of Nodes: 2
+list of Selected Subset of Nodes:  ['0', '1']
+ 
+List of Delays [62.58]
+The min latency value in selected subset: 62.58
+The max latency value in selected subset: 62.58
+The avg latency value in selected subset: 62.58
+ 
+List of Cost [0.03]
+The min cost value in selected subset: 0.03
+The max cost value in selected subset: 0.03
+The avg cost value in selected subset: 0.03
+sum of the cost in selected subset: 0.03
+ 
+List of hops [1]
+The min no. of hops traversed in selected subset: 1
+The max no. of hops traversed in selected subset: 1
+The avg no. of hops traversed in selected subset: 1.0
+ 
