@@ -1,0 +1,34 @@
+Name: 
+Type: Graph
+Number of nodes: 30
+Number of edges: 64
+Average degree:   4.2667
+ 
+**** SAW Method ****
+**** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
+ 
+The Required Subset of Nodes: 4
+Selected Starting Node is:  28
+list of Selected Subset of Nodes:  ['28', '25', '0', '16', '15']
+ 
+List of Delays [59.9, 87.79, 119.18, 56.37, 27.89, 59.28, 33.36, 31.39, 61.25, 92.64]
+The min latency value in selected subset: 27.89
+The max latency value in selected subset: 119.18
+The avg latency value in selected subset: 62.9
+ 
+List of BW [12.3, 12.3, 12.2, 8.4, 13.1, 12.2, 8.8, 12.2, 8.8, 8.8]
+The min bw value in selected subset: 8.4
+The max bw value in selected subset: 13.1
+The avg bw value in selected subset: 10.91
+ 
+List of Cost [0.12, 0.24, 0.27, 0.21, 0.13, 0.15, 0.23, 0.02, 0.36, 0.38]
+The min cost value in selected subset: 0.02
+The max cost value in selected subset: 0.38
+The avg cost value in selected subset: 0.21
+sum of the cost in selected subset: 2.11
+ 
+List of hops [1, 2, 3, 1, 1, 2, 1, 1, 2, 3]
+The min no. of hops traversed in selected subset: 1
+The max no. of hops traversed in selected subset: 3
+The avg no. of hops traversed in selected subset: 1.7
+ 
