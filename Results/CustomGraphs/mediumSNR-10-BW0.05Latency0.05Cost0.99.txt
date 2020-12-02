@@ -1,0 +1,34 @@
+Name: 
+Type: Graph
+Number of nodes: 30
+Number of edges: 64
+Average degree:   4.2667
+ 
+**** SAW Method ****
+**** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
+ 
+The Required Subset of Nodes: 9
+Selected Starting Node is:  5
+list of Selected Subset of Nodes:  ['5', '8', '16', '12', '20', '1', '18', '13', '9', '2']
+ 
+List of Delays [59.86, 103.01, 168.81, 152.44, 200.38, 131.23, 168.23, 236.67, 267.28, 43.15, 108.95, 92.58, 140.52, 71.37, 108.37, 176.81, 207.42, 65.8, 49.43, 97.37, 114.52, 151.52, 219.96, 250.57, 64.63, 112.57, 54.86, 91.86, 160.3, 190.91, 47.94, 119.49, 156.49, 224.93, 255.54, 167.43, 204.43, 272.87, 303.48, 37.0, 105.44, 136.05, 68.44, 99.05, 30.61]
+The min latency value in selected subset: 30.61
+The max latency value in selected subset: 303.48
+The avg latency value in selected subset: 139.79
+ 
+List of BW [9.1, 9.1, 9.1, 9.1, 8.4, 7.1, 7.1, 7.1, 7.1, 12.9, 11.8, 12.9, 8.4, 7.1, 7.1, 7.1, 7.1, 11.8, 13.3, 8.4, 7.1, 7.1, 7.1, 7.1, 13.3, 8.4, 12.9, 8.5, 8.5, 8.5, 8.4, 12.9, 8.5, 8.5, 8.5, 8.4, 8.4, 8.4, 8.4, 8.5, 8.5, 8.5, 13.3, 12.0, 12.0]
+The min bw value in selected subset: 7.1
+The max bw value in selected subset: 13.3
+The avg bw value in selected subset: 9.17
+ 
+List of Cost [0.25, 0.45, 0.67, 0.6, 0.76, 0.39, 0.58, 0.76, 1.01, 0.2, 0.42, 0.36, 0.52, 0.14, 0.33, 0.51, 0.76, 0.22, 0.16, 0.31, 0.34, 0.53, 0.71, 0.96, 0.03, 0.19, 0.16, 0.35, 0.53, 0.78, 0.16, 0.2, 0.39, 0.56, 0.81, 0.35, 0.54, 0.72, 0.97, 0.19, 0.37, 0.62, 0.18, 0.43, 0.25]
+The min cost value in selected subset: 0.03
+The max cost value in selected subset: 1.01
+The avg cost value in selected subset: 0.46
+sum of the cost in selected subset: 20.72
+ 
+List of hops [1, 2, 3, 3, 4, 2, 3, 4, 5, 1, 2, 2, 3, 1, 2, 3, 4, 1, 1, 2, 2, 3, 4, 5, 1, 2, 1, 2, 3, 4, 1, 2, 3, 4, 5, 3, 4, 5, 6, 1, 2, 3, 1, 2, 1]
+The min no. of hops traversed in selected subset: 1
+The max no. of hops traversed in selected subset: 6
+The avg no. of hops traversed in selected subset: 2.64
+ 

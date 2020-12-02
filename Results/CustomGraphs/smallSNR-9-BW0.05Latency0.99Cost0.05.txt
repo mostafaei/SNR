@@ -1,0 +1,34 @@
+Name: 
+Type: Graph
+Number of nodes: 20
+Number of edges: 35
+Average degree:   3.5000
+ 
+**** SAW Method ****
+**** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
+ 
+The Required Subset of Nodes: 8
+Selected Starting Node is:  5
+list of Selected Subset of Nodes:  ['5', '8', '13', '9', '12', '15', '1', '3', '11']
+ 
+List of Delays [23.8, 21.37, 20.69, 26.99, 22.75, 16.67, 23.87, 7.25, 11.94, 44.49, 3.19, 46.55, 40.47, 35.2, 31.05, 42.06, 15.13, 44.12, 38.04, 23.26, 39.88, 21.28, 43.44, 37.36, 44.56, 27.94, 49.74, 43.66, 38.39, 34.24, 39.42, 46.62, 30.0, 40.54, 23.92, 16.62]
+The min latency value in selected subset: 3.19
+The max latency value in selected subset: 49.74
+The avg latency value in selected subset: 31.01
+ 
+List of BW [8.9, 9.7, 11.3, 8.9, 11.6, 7.3, 10.3, 10.3, 9.0, 8.9, 11.0, 8.9, 7.3, 8.8, 8.9, 9.7, 9.0, 9.7, 7.3, 8.8, 8.8, 8.1, 11.3, 7.3, 10.3, 10.3, 8.9, 7.3, 8.8, 8.9, 7.3, 10.3, 10.3, 7.3, 7.3, 13.2]
+The min bw value in selected subset: 7.3
+The max bw value in selected subset: 13.2
+The avg bw value in selected subset: 9.2
+ 
+List of Cost [0.18, 0.09, 0.18, 0.38, 0.06, 0.2, 0.38, 0.14, 0.11, 0.36, 0.2, 0.24, 0.39, 0.26, 0.32, 0.27, 0.32, 0.15, 0.29, 0.14, 0.39, 0.18, 0.24, 0.38, 0.56, 0.31, 0.44, 0.59, 0.46, 0.52, 0.27, 0.44, 0.2, 0.58, 0.34, 0.24]
+The min cost value in selected subset: 0.06
+The max cost value in selected subset: 0.59
+The avg cost value in selected subset: 0.3
+sum of the cost in selected subset: 10.8
+ 
+List of hops [1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 2, 3, 2, 3, 3, 3, 3, 2, 3, 2, 3, 2, 1]
+The min no. of hops traversed in selected subset: 1
+The max no. of hops traversed in selected subset: 3
+The avg no. of hops traversed in selected subset: 1.89
+ 
