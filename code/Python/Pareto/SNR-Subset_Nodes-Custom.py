@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import networkx as nx
-#import matplotlib.pyplot as plt
+
 from string import ascii_lowercase
 import pandas as pd
 import math
@@ -375,7 +375,7 @@ final_path=list(result.iloc[-1].tail(2).head(1))
 final_path=final_path[0]
 final_path=final_path.split(",")
 Final_graph = g.subgraph(final_path)
-path_final  = list(Final_graph.node)
+path_final  = list(Final_graph.nodes)
 
 #Delays Calculation
 AvgDelay=list(getAvgDelay(final_path))
