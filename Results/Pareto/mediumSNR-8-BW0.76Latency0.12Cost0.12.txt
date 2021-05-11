@@ -8,27 +8,27 @@ Average degree:   4.2667
 **** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
  
 The Required Subset of Nodes: 7
-Selected Starting Node is:  3
-list of Selected Subset of Nodes:  ['3', '12', '23', '20', '11', '21', '16', '0']
+Selected Starting Node is:  6
+list of Selected Subset of Nodes:  ['6', '0', '16', '8', '25', '28', '20', '11']
  
-List of Delays [50.89, 85.93, 115.52, 150.55, 173.23, 116.69, 148.08, 35.04, 64.63, 99.66, 122.34, 65.8, 97.19, 99.67, 134.7, 157.38, 34.92, 66.31, 35.03, 57.71, 49.43, 80.82, 92.74, 84.46, 115.85, 107.14, 138.53, 31.39]
-The min latency value in selected subset: 31.39
-The max latency value in selected subset: 173.23
-The avg latency value in selected subset: 93.27
+List of Delays [36.73, 68.12, 26.87, 64.62, 124.52, 117.55, 152.58, 31.39, 63.6, 27.89, 87.79, 80.82, 115.85, 43.15, 59.28, 119.18, 49.43, 84.46, 91.49, 151.39, 92.58, 127.61, 59.9, 42.96, 77.99, 102.86, 137.89, 35.03]
+The min latency value in selected subset: 26.87
+The max latency value in selected subset: 152.58
+The avg latency value in selected subset: 81.2
  
-List of BW [11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 11.6, 13.8, 13.3, 13.3, 12.7, 11.8, 11.8, 13.3, 13.3, 12.7, 8.3, 8.3, 13.4, 12.7, 13.3, 12.2, 12.7, 13.3, 12.2, 12.7, 12.2, 12.2]
-The min bw value in selected subset: 8.3
-The max bw value in selected subset: 13.8
-The avg bw value in selected subset: 12.17
+List of BW [13.5, 12.2, 11.2, 13.1, 12.3, 12.2, 12.2, 12.2, 11.2, 13.1, 12.3, 12.2, 12.2, 12.9, 12.2, 12.2, 13.3, 13.3, 11.2, 11.2, 12.9, 12.9, 12.3, 10.1, 10.1, 10.1, 10.1, 13.4]
+The min bw value in selected subset: 10.1
+The max bw value in selected subset: 13.5
+The avg bw value in selected subset: 12.08
  
-List of Cost [0.1, 0.18, 0.14, 0.2, 0.16, 0.32, 0.34, 0.08, 0.03, 0.1, 0.06, 0.22, 0.24, 0.11, 0.18, 0.14, 0.08, 0.1, 0.07, 0.03, 0.16, 0.18, 0.1, 0.23, 0.25, 0.18, 0.2, 0.02]
+List of Cost [0.18, 0.2, 0.04, 0.3, 0.42, 0.35, 0.42, 0.02, 0.22, 0.13, 0.24, 0.18, 0.25, 0.2, 0.15, 0.27, 0.16, 0.23, 0.35, 0.46, 0.36, 0.43, 0.12, 0.08, 0.15, 0.2, 0.27, 0.07]
 The min cost value in selected subset: 0.02
-The max cost value in selected subset: 0.34
-The avg cost value in selected subset: 0.15
-sum of the cost in selected subset: 4.2
+The max cost value in selected subset: 0.46
+The avg cost value in selected subset: 0.23
+sum of the cost in selected subset: 6.45
  
-List of hops [1, 2, 2, 3, 3, 2, 3, 1, 1, 2, 2, 1, 2, 2, 3, 3, 1, 2, 1, 1, 1, 2, 2, 2, 3, 2, 3, 1]
+List of hops [1, 2, 1, 2, 3, 3, 4, 1, 2, 1, 2, 2, 3, 1, 2, 3, 1, 2, 3, 4, 2, 3, 1, 1, 2, 2, 3, 1]
 The min no. of hops traversed in selected subset: 1
-The max no. of hops traversed in selected subset: 3
-The avg no. of hops traversed in selected subset: 1.93
+The max no. of hops traversed in selected subset: 4
+The avg no. of hops traversed in selected subset: 2.07
  
