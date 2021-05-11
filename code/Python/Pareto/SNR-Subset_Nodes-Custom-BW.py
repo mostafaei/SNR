@@ -188,7 +188,7 @@ def get_firstnode_RankBased():
 
     # For bandwith, set the total sum to 'max'
     # For latency and cost, set the total sum to 'min'
-    lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.min()]
+    lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.max()]
     node_with_min_weight = int(lst.node)
    
     #Print all the list
@@ -265,6 +265,8 @@ def subSet_of_Nodes(Num_Of_Nodes, get_firstnode):
         if(lst_Neighbors_Rank.shape[0] >0):
             
             # ****** On the base of sum ****** #
+            # For bandwith, set the total sum to 'max'
+            # For latency and cost, set the total sum to 'min'
             lst = lst_Neighbors_Rank[lst_Neighbors_Rank.Total_sum  == lst_Neighbors_Rank.Total_sum.max()]
             node_with_max_rank = int(lst.neighbor)
             
