@@ -1,0 +1,34 @@
+Name: 
+Type: Graph
+Number of nodes: 50
+Number of edges: 147
+Average degree:   5.8800
+ 
+**** SNR Method ****
+**** Required Subset of Node & Results: Starting node as node with highest Rank ***** 
+ 
+The Required Subset of Nodes: 7
+Selected Starting Node is:  34
+list of Selected Subset of Nodes:  ['34', '37', '46', '15', '42', '39', '18', '25']
+ 
+List of Delays [92.7, 184.0, 187.42, 180.86, 269.41, 273.66, 85.86, 91.3, 94.72, 176.85, 265.4, 269.65, 178.56, 97.87, 85.55, 174.1, 178.35, 180.55, 183.42, 271.97, 276.22, 273.28, 88.55, 92.8, 95.0, 181.35, 183.55, 187.8]
+The min latency value in selected subset: 85.55
+The max latency value in selected subset: 276.22
+The avg latency value in selected subset: 175.03
+ 
+List of BW [7.5, 7.5, 7.5, 7.8, 7.1, 7.8, 7.8, 9.6, 9.1, 8.1, 7.1, 8.1, 7.5, 8.2, 8.1, 7.1, 8.1, 8.1, 8.1, 7.1, 8.1, 7.5, 7.1, 9.7, 11.9, 7.1, 7.1, 9.7]
+The min bw value in selected subset: 7.1
+The max bw value in selected subset: 11.9
+The avg bw value in selected subset: 8.05
+ 
+List of Cost [0.21, 0.39, 0.3, 0.22, 0.34, 0.33, 0.07, 0.18, 0.09, 0.39, 0.51, 0.5, 0.28, 0.24, 0.21, 0.33, 0.32, 0.36, 0.45, 0.57, 0.55, 0.38, 0.12, 0.11, 0.15, 0.23, 0.27, 0.26]
+The min cost value in selected subset: 0.07
+The max cost value in selected subset: 0.57
+The avg cost value in selected subset: 0.3
+sum of the cost in selected subset: 8.36
+ 
+List of hops [1, 2, 2, 2, 3, 3, 1, 1, 1, 2, 3, 3, 2, 1, 1, 2, 2, 2, 2, 3, 3, 3, 1, 1, 1, 2, 2, 2]
+The min no. of hops traversed in selected subset: 1
+The max no. of hops traversed in selected subset: 3
+The avg no. of hops traversed in selected subset: 1.93
+ 
