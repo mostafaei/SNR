@@ -16,7 +16,7 @@ for j in (myl):
     		w1=q/2
     		w2=1-q
     		w3=q/2
-    		os.system("python.exe SNR-Subset_Nodes-Custom.py %s %d %s %s %s > %s-%d-BW%sLatency%sCost%s.txt"
+    		os.system("python.exe SNR-Subset_Nodes-Custom-Cost-Delay.py %s %d %s %s %s > %s-%d-BW%sLatency%sCost%s.txt"
     			%(j,i,w1, w2, w3, j.replace(".graphml", ""),i, round(w1,2), round(w2,2), round(w3,2)))
 
 # Weight Parameters latency
@@ -30,7 +30,7 @@ for j in (myl):
     		w1=1-q
     		w2=q/2
     		w3=q/2
-    		os.system("python.exe SNR-Subset_Nodes-Custom.py %s %d %s %s %s > %s-%d-BW%sLatency%sCost%s.txt"
+    		os.system("python.exe SNR-Subset_Nodes-Custom-BW.py %s %d %s %s %s > %s-%d-BW%sLatency%sCost%s.txt"
     			%(j,i,w1, w2, w3, j.replace(".graphml", ""),i, round(w1,2), round(w2,2), round(w3,2)))
             
 
@@ -45,5 +45,5 @@ for j in (myl):
     		w1=q/2
     		w2=q/2
     		w3=1-q
-    		os.system("python.exe SNR-Subset_Nodes-Custom.py %s %d %s %s %s > %s-%d-BW%sLatency%sCost%s.txt"
+    		os.system("python.exe SNR-Subset_Nodes-Custom-Cost-Delay.py %s %d %s %s %s > %s-%d-BW%sLatency%sCost%s.txt"
     			%(j,i,w1, w2, w3, j.replace(".graphml", ""),i, round(w1,2), round(w2,2), round(w3,2)))
