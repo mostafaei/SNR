@@ -1,1 +1,0 @@
-Excluded Average in line 171 that is, 'sum/count'
