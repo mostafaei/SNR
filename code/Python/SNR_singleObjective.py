@@ -163,7 +163,7 @@ def get_firstnode_RankBased():
     
     for node in nodes:
         neighbors_of_Node = g[node]
-        sum=sum1=sum2 = 0
+        sumLat=sumBW=sumCost = 0
         count = 0
         
         for n_node in neighbors_of_Node:
@@ -171,12 +171,12 @@ def get_firstnode_RankBased():
             bw = d['bw']
             lat = d['latency']
             cost = d['cost']
-            sum += lat
-            sum1 += bw
-            sum2 += cost
+            sumLat += lat
+            sumBW += bw
+            sumCost += cost
             count+=1
-        lst_nodes_avg_wgt = lst_nodes_avg_wgt.append({"node": node, "latency": sum/count, "bw": sum1/count,
-                                                     "cost": sum2/count},ignore_index=True)
+        lst_nodes_avg_wgt = lst_nodes_avg_wgt.append({"node": node, "latency": sumLat/count, "bw": sumBW/count,
+                                                     "cost": sumCost/count},ignore_index=True)
     #print(lst_nodes_avg_wgt)
     bw_max = lst_nodes_avg_wgt.bw.max()
     lat_min = lst_nodes_avg_wgt.latency.min()
@@ -192,30 +192,43 @@ def get_firstnode_RankBased():
 
       
     for index, row in lst_nodes_avg_wgt.iterrows():
-        if (row.bw - bw_min) == 0 or (bw_max - bw_min)==0:
+        if (bw_max - bw_min)==0:
             x=0
         else:
-            x=w1*((row.bw - bw_min) / (bw_max - bw_min))
-        if (row.latency - lat_min) == 0 or (lat_max - lat_min) == 0:
+            x=w1*((bw_max - row.bw ) / (bw_max - bw_min))
+        if (lat_max - lat_min) == 0:
             y=0
         else:
-            y=w2*((row.latency - lat_min) / (lat_max - lat_min))
-        if (row.cost- cost_min) == 0 or (cost_max - cost_min) == 0 :
+            y=w2*((lat_max - row.latency) / (lat_max - lat_min))
+        if (cost_max - cost_min) == 0 :
             z=0
         else:
-            z=w3*((row.cost- cost_min) / (cost_max - cost_min))
+            z=w3*((cost_max - row.cost) / (cost_max - cost_min))
+        # if (row.bw - bw_min) == 0 or (bw_max - bw_min)==0:
+        #     x=0
+        # else:
+        #     x=w1*((row.bw - bw_min) / (bw_max - bw_min))
+        # if (row.latency - lat_min) == 0 or (lat_max - lat_min) == 0:
+        #     y=0
+        # else:
+        #     y=w2*((row.latency - lat_min) / (lat_max - lat_min))
+        # if (row.cost- cost_min) == 0 or (cost_max - cost_min) == 0 :
+        #     z=0
+        # else:
+        #     z=w3*((row.cost- cost_min) / (cost_max - cost_min))
         temp = {"node": row.node, "bw_nor": x, "lat_nor": y, "cost_nor": z}
         lst_nodes_test1= lst_nodes_test1.append(temp,  ignore_index=True )
 
 
     lst_nodes_test1["total_sum"]=lst_nodes_test1.sum(axis=1)
-    #lst_nodes_test1['ranking'] = lst_nodes_test1['Total_sum'].rank(ascending=False)
+    lst_nodes_test1['ranking'] = lst_nodes_test1.total_sum.rank(ascending=False)
+    print("lst_nodes_test1['ranking'] ",lst_nodes_test1['ranking'] )
 
     # For bandwith, set the total sum to 'max'
     # For latency and cost, set the total sum to 'min'
     lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.min()]
-    #l=list(lst.node)
-    #print('lst.node: ', l[0],type(lst.node))
+    l=(lst_nodes_test1)
+    print('lst.node: ', l)
     #node_with_min_weight = int(lst.node)
     node_with_min_weight = lst.node
    
@@ -245,18 +258,30 @@ def rank(node, lst_Neighbors):
     cost_sum = lst_Neighbors.cost.sum()
 
     for index, row in lst_Neighbors.iterrows():
-        if (row.bw - bw_min) == 0 or (bw_max - bw_min)==0:
+        if (bw_max - bw_min)==0:
             x=0
         else:
-            x=w1*((row.bw - bw_min) / (bw_max - bw_min))
-        if (row.latency - lat_min) == 0 or (lat_max - lat_min) == 0:
+            x=w1*((bw_max - row.bw ) / (bw_max - bw_min))
+        if (lat_max - lat_min) == 0:
             y=0
         else:
-            y=w2*((row.latency - lat_min) / (lat_max - lat_min))
-        if (row.cost- cost_min) == 0 or (cost_max - cost_min) == 0 :
+            y=w2*((lat_max - row.latency) / (lat_max - lat_min))
+        if (cost_max - cost_min) == 0 :
             z=0
         else:
-            z=w3*((row.cost- cost_min) / (cost_max - cost_min))
+            z=w3*((cost_max - row.cost) / (cost_max - cost_min))
+        # if (row.bw - bw_min) == 0 or (bw_max - bw_min)==0:
+        #     x=0
+        # else:
+        #     x=w1*((row.bw - bw_min) / (bw_max - bw_min))
+        # if (row.latency - lat_min) == 0 or (lat_max - lat_min) == 0:
+        #     y=0
+        # else:
+        #     y=w2*((row.latency - lat_min) / (lat_max - lat_min))
+        # if (row.cost- cost_min) == 0 or (cost_max - cost_min) == 0 :
+        #     z=0
+        # else:
+        #     z=w3*((row.cost- cost_min) / (cost_max - cost_min))
             
         #x=w1*((row.bw - bw_min) / (bw_max - bw_min))
         #y=w2*((row.latency - lat_min) / (lat_max - lat_min))
@@ -319,7 +344,7 @@ def subSet_of_Nodes(Num_Of_Nodes, get_firstnode):
         if(lst_Neighbors_Rank.shape[0] >0):
             
             # ****** On the base of sum ****** #
-            lst = lst_Neighbors_Rank[lst_Neighbors_Rank.Total_sum  == lst_Neighbors_Rank.Total_sum.min()]
+            lst = lst_Neighbors_Rank[lst_Neighbors_Rank.Total_sum  == lst_Neighbors_Rank.Total_sum.max()]
             #node_with_max_rank = int(lst.neighbor)
             #print('lst:' , lst.iloc[0]['neighbor'])
             node_with_max_rank = int(lst.iloc[0]['neighbor'])
