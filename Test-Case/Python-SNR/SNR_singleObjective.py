@@ -28,11 +28,11 @@ import random
 import copy
 
 # graph name and required nodes
-#name_arg= sys.argv[1]
-name_arg= 'smallSNR.graphml'
+name_arg= sys.argv[1]
+# name_arg= 'largeSNR.graphml'
 
-#no_subSet_Arg1= sys.argv[2]
-no_subSet_Arg1= 6
+no_subSet_Arg1= sys.argv[2]
+# no_subSet_Arg1= 8
 
 
 g = nx.read_graphml(name_arg)
@@ -44,14 +44,14 @@ print(nx.info(g))
 #global lst_nodes_test1 = pd.DataFrame()
 #global lst_nodes_new = pd.DataFrame()
 # BW, lat, Cost
-#w1=float(sys.argv[3])
-#w2=float(sys.argv[4])
-#w3=float(sys.argv[5])
+w1=float(sys.argv[3])
+w2=float(sys.argv[4])
+w3=float(sys.argv[5])
 
 
-w1=0.15     #bandwidth
-w2=0.80     #latency
-w3=0.05    #cost
+# w1=0.4    #bandwidth
+# w2=.2     #latency
+# w3=0.4    #cost
 
 # ### Graph Labeling for Custom and TopologyZoo Networks
 
@@ -238,7 +238,7 @@ def get_firstnode_RankBased():
 
     # For bandwith, set the total sum to 'max'
     # For latency and cost, set the total sum to 'min'
-    lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.min()]
+    lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.max()]
     lst_nodes_new = (lst_nodes_test1)
     #print('lst_nodes_new:: ',lst_nodes_new)
 
@@ -253,20 +253,20 @@ def get_firstnode_RankBased():
 
 def node_rank(node, lst_Neighbors):
     
-    lst_nodes_test1 = pd.DataFrame()
-    lst_nodes_test = pd.DataFrame()
-    #print('lst_Neighbors', lst_Neighbors)
-    bw_max = lst_Neighbors.bw.max()
-    lat_min = lst_Neighbors.latency.min()
-    cost_min = lst_Neighbors.cost.min()
+    # lst_nodes_test1 = pd.DataFrame()
+    # lst_nodes_test = pd.DataFrame()
+    # #print('lst_Neighbors', lst_Neighbors)
+    # bw_max = lst_Neighbors.bw.max()
+    # lat_min = lst_Neighbors.latency.min()
+    # cost_min = lst_Neighbors.cost.min()
     
-    bw_min = lst_Neighbors.bw.min()
-    lat_max = lst_Neighbors.latency.max()
-    cost_max = lst_Neighbors.cost.max()
+    # bw_min = lst_Neighbors.bw.min()
+    # lat_max = lst_Neighbors.latency.max()
+    # cost_max = lst_Neighbors.cost.max()
     
-    bw_sum = lst_Neighbors.bw.sum()
-    lat_sum = lst_Neighbors.latency.sum()
-    cost_sum = lst_Neighbors.cost.sum()
+    # bw_sum = lst_Neighbors.bw.sum()
+    # lat_sum = lst_Neighbors.latency.sum()
+    # cost_sum = lst_Neighbors.cost.sum()
 
     #lst_nodes_new['ranking'] = lst_nodes_new['total_sum'].rank(ascending=False)
     #lst_nodes_new=lst_nodes_test1
@@ -281,7 +281,7 @@ def node_rank(node, lst_Neighbors):
     #print('rank after: ', lst_nodes_new)
 
     min_wgt_node = lst_nodes_new.iloc[0,3]
-    print('insdeloop ', min_wgt_node)
+    #print('insdeloop ', min_wgt_node)
     return min_wgt_node
 
 
@@ -329,6 +329,49 @@ def rank(node, lst_Neighbors):
 
 
 ##  Alogrithm for Selecting Subset of Node Cluster
+def subSet_of_Nodes2(Num_Of_Nodes, get_firstnode):
+    firstnode = str(get_firstnode)
+    currentnode = firstnode
+    nodes=list(g.nodes)
+    lst_VisitedNodes=[]
+    lst_VisitedNodes.append(str(firstnode))
+    neighborsList=[]
+    #add neighbors of the first node
+    tmp=g.neighbors(firstnode)
+    for n in tmp:
+        neighborsList.append(n)
+        
+    lst_nodes_new["total_sum"]=lst_nodes_new["bw_nor"] + lst_nodes_new["lat_nor"] + lst_nodes_new["cost_nor"]
+    #print('rank before ', lst_nodes_new)
+    lst_nodes_new['ranking'] = lst_nodes_new['total_sum'].rank(ascending=True)
+    lst_nodes_new.reset_index(drop=False)
+    # print('lst_nodes_new',lst_nodes_new)
+    # print('neighborsList',neighborsList)
+    #We look for nodes to add to the current set
+    while(len(lst_VisitedNodes)<Num_Of_Nodes):
+        # print('\n')
+        maxRank=0
+        bestNode=0
+        for tmpNode in neighborsList:
+            nextNodeRank=lst_nodes_new.iloc[int(tmpNode),5]
+            nextNode=lst_nodes_new.iloc[int(tmpNode),3]
+            #print('nextNode: ',nextNode)
+            if nextNodeRank>maxRank:
+                maxRank=nextNodeRank
+                bestNode=nextNode
+        if bestNode not in lst_VisitedNodes:
+            lst_VisitedNodes.append(str(bestNode))
+            neighborsList.remove(str(bestNode))
+        #print ('lst_VisitedNodes: ',lst_VisitedNodes)
+        #print ('neighborsList: ',neighborsList)
+        tmp=g.neighbors(str(int(bestNode)))
+        for no in tmp:
+            if str(no) not in neighborsList and str(no) not in lst_VisitedNodes:
+                neighborsList.append(str(no))
+        
+    #return the list of all visited nodes.
+    #print ('lst_VisitedNodes: ',lst_VisitedNodes)
+    return lst_VisitedNodes
 
 def subSet_of_Nodes(Num_Of_Nodes, get_firstnode):
     firstnode = str(get_firstnode)
@@ -345,6 +388,7 @@ def subSet_of_Nodes(Num_Of_Nodes, get_firstnode):
     for n in nodes:
     
         neighbors_of_CurrentNode = g[str(currentnode)]
+        # print('neighbors_of_CurrentNode:', neighbors_of_CurrentNode)
         lst_Neighbors = pd.DataFrame()
         if(lst_VisitedNodes.shape[0] >1):
 
@@ -364,7 +408,7 @@ def subSet_of_Nodes(Num_Of_Nodes, get_firstnode):
             
         if(len(lst_Neighbors)>0):
             ranktable = node_rank(currentnode, lst_Neighbors)
-            print('ranktable: ', ranktable)
+            # print('ranktable: ', ranktable)
             lst_Neighbors_Rank = lst_Neighbors_Rank.append(ranktable)       
             lst_Neighbors_Rank['neighbor'] = list(map(int, lst_Neighbors_Rank['neighbor']))
             lst_Neighbors_Rank = lst_Neighbors_Rank[~lst_Neighbors_Rank.neighbor.isin(list(map(int, list(lst_VisitedNodes['visited node']))) )]
@@ -495,12 +539,13 @@ startNode=hh[0]
 
 
 
-result = subSet_of_Nodes(x,startNode)
-#print('result:',result)
-final_path=list(result.iloc[-1].tail(2).head(1))
-final_path=final_path[0]
+result = subSet_of_Nodes2(x,startNode)
+# print('result:',result)
+# final_path=list(result.iloc[-1].tail(2).head(1))
+# final_path=final_path[0]
+final_path=result
 #print('final_path:',final_path)
-final_path=final_path.split(",")
+# final_path=final_path.split(",")
 #print('final_path:',final_path)
 Final_graph = g.subgraph(final_path)
 #print('Final_graph:',type(Final_graph))

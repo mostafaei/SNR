@@ -28,8 +28,8 @@ w1=0.0     #bandwidth
 w2=1     #latency
 w3=0.0    #cost
 for j in (myl):
-    for i in range(6,7,1):
-    	for q in numpy.arange(0,1.0,0.5):
+    for i in range(8,9,1):
+    	for q in numpy.arange(0,1.0,0.25):
     		w1=round(q/2,2)
     		w2=round((1-q),2)
     		w3=round(q/2,2)
