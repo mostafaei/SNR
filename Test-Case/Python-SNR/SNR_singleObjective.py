@@ -36,7 +36,7 @@ no_subSet_Arg1= sys.argv[2]
 
 
 g = nx.read_graphml(name_arg)
-x=int(no_subSet_Arg1)-1
+x=int(no_subSet_Arg1)
 g= nx.Graph(g)
 pos = nx.kamada_kawai_layout(g)
 print(nx.info(g))
@@ -49,9 +49,9 @@ w2=float(sys.argv[4])
 w3=float(sys.argv[5])
 
 
-# w1=0.4    #bandwidth
-# w2=.2     #latency
-# w3=0.4    #cost
+# w1=0.05    #bandwidth
+# w2=.9     #latency
+# w3=0.05   #cost
 
 # ### Graph Labeling for Custom and TopologyZoo Networks
 
@@ -158,7 +158,7 @@ def read_graph(name_arg):
             # t         = ( distance       * 1000              ) / ( 1.97 * 10**8   / 1000         )
             latency = ( distance * 1000 ) / ( 197000 )
             g[e[0]][e[1]]['latency']=round(latency,2)
-            g[e[0]][e[1]]['bw']=round (random.uniform(7.0,14.0), 1)
+            g[e[0]][e[1]]['bw']=round (random.uniform(7.0,140.0), 1)
             g[e[0]][e[1]]['cost']=round (random.uniform(0.1,0.5), 2)
         return g
             
@@ -203,10 +203,11 @@ def get_firstnode_RankBased():
 
       
     for index, row in lst_nodes_avg_wgt.iterrows():
+        #print('bw: ',row.bw, ' lat: ' , row.latency, ' cost: ', row.cost)
         if (bw_max - bw_min)==0:
             x=0
         else:
-            x=w1*((bw_max - row.bw ) / (bw_max - bw_min))
+            x=w1*(( bw_max - row.bw ) / (bw_max - bw_min))
         if (lat_max - lat_min) == 0:
             y=0
         else:
@@ -230,7 +231,7 @@ def get_firstnode_RankBased():
         temp = {"node": row.node, "bw_nor": x, "lat_nor": y, "cost_nor": z}
         lst_nodes_test1= lst_nodes_test1.append(temp,  ignore_index=True )
 
-
+    #print('lat_max: ',lat_max, ' lat_min: ' , lat_min)
     lst_nodes_test1["total_sum"]=lst_nodes_test1.sum(axis=1)
     lst_nodes_test1['ranking'] = lst_nodes_test1.total_sum.rank(ascending=False)
     #print('lst_node(fistnode):: ',lst_nodes_test1)
@@ -238,7 +239,7 @@ def get_firstnode_RankBased():
 
     # For bandwith, set the total sum to 'max'
     # For latency and cost, set the total sum to 'min'
-    lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.max()]
+    lst = lst_nodes_test1[lst_nodes_test1.total_sum  == lst_nodes_test1.total_sum.min()]
     lst_nodes_new = (lst_nodes_test1)
     #print('lst_nodes_new:: ',lst_nodes_new)
 
