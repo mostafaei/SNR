@@ -5,7 +5,7 @@ This repository contains the code used in [SNR], which was accepted at [FGCS'22]
 ## What can I find in this repo?
 
 * `code/Python` contains SNR worker node selection algorithm in Python.
-We have used this implementation to evaluate the worker node selection algorithms of SNR on three different real-world topologies when running the extended version of the Yahoo Streaming Benchmark [YSB](https://github.com/dataArtisans/yahoo-streaming-benchmark). We used this code for the evaluation in Section 7.4. 
+We have used this implementation to evaluate the worker node selection algorithms of SNR on three different real-world topologies when running the extended version of the Yahoo Streaming Benchmark [YSB](https://github.com/dataArtisans/yahoo-streaming-benchmark). We used this code for the evaluation in Section 4. 
 
 * `code/P4` contains the P4_16 code SNR on programmable switches.<br/>
 
